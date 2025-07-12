@@ -1,0 +1,39 @@
+import pyautogui
+
+#mouse operation
+pyautogui.click(100,100)
+pyautogui.rightClick(100,100)
+
+task 2
+
+import pyautogui
+import pyperclip
+import time
+
+# Step 1: Give user time to stop the script if needed
+print("Starting in 5 seconds. Move your mouse to the top-left to abort.")
+time.sleep(5)
+
+# Step 2: Press Win+R to open Run
+pyautogui.hotkey('win', 'r')
+time.sleep(1)
+
+# Step 3: Type chrome and press Enter
+pyautogui.typewrite('chrome\n', interval=0.1)
+time.sleep(3)  # Wait for Chrome to open
+
+# Step 4: Type the search query in the address bar
+search_query = "England vs India score"
+pyperclip.copy(search_query)
+pyautogui.hotkey('ctrl', 'v')  # Paste using clipboard to avoid layout issues
+pyautogui.press('enter')
+time.sleep(4)  # Wait for Google to load
+
+# Step 5: Click somewhere in the area of the first search result
+# (Adjust coordinates based on your screen resolution)
+pyautogui.moveTo(400, 350)  # Approx location of first result
+pyautogui.click()
+
+
+
+
